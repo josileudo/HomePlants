@@ -14,6 +14,7 @@
 		D2228FBF291FE39800AA7E22 /* PlantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FBE291FE39800AA7E22 /* PlantsTests.swift */; };
 		D2228FC9291FE39800AA7E22 /* PlantsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FC8291FE39800AA7E22 /* PlantsUITests.swift */; };
 		D2228FCB291FE39800AA7E22 /* PlantsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FCA291FE39800AA7E22 /* PlantsUITestsLaunchTests.swift */; };
+		D2228FDA291FEC1F00AA7E22 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FD9291FEC1F00AA7E22 /* Plants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		D2228FC4291FE39800AA7E22 /* PlantsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2228FC8291FE39800AA7E22 /* PlantsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsUITests.swift; sourceTree = "<group>"; };
 		D2228FCA291FE39800AA7E22 /* PlantsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2228FD9291FEC1F00AA7E22 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +98,9 @@
 			children = (
 				D2228FD8291FE9E800AA7E22 /* Model */,
 				D2228FD7291FE9DB00AA7E22 /* View */,
+				D2228FB1291FE39800AA7E22 /* Assets.xcassets */,
 				D2228FAD291FE39300AA7E22 /* PlantsApp.swift */,
 				D2228FAF291FE39300AA7E22 /* ContentView.swift */,
-				D2228FB1291FE39800AA7E22 /* Assets.xcassets */,
 				D2228FB3291FE39800AA7E22 /* Preview Content */,
 			);
 			path = Plants;
@@ -139,6 +141,7 @@
 		D2228FD8291FE9E800AA7E22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D2228FD9291FEC1F00AA7E22 /* Plants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				D2228FB0291FE39300AA7E22 /* ContentView.swift in Sources */,
 				D2228FAE291FE39300AA7E22 /* PlantsApp.swift in Sources */,
+				D2228FDA291FEC1F00AA7E22 /* Plants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

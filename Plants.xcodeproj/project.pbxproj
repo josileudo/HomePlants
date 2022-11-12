@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		D2228FAE291FE39300AA7E22 /* PlantsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FAD291FE39300AA7E22 /* PlantsApp.swift */; };
 		D2228FB0291FE39300AA7E22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FAF291FE39300AA7E22 /* ContentView.swift */; };
-		D2228FB2291FE39800AA7E22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2228FB1291FE39800AA7E22 /* Assets.xcassets */; };
 		D2228FB5291FE39800AA7E22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2228FB4291FE39800AA7E22 /* Preview Assets.xcassets */; };
 		D2228FBF291FE39800AA7E22 /* PlantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FBE291FE39800AA7E22 /* PlantsTests.swift */; };
 		D2228FC9291FE39800AA7E22 /* PlantsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FC8291FE39800AA7E22 /* PlantsUITests.swift */; };
 		D2228FCB291FE39800AA7E22 /* PlantsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FCA291FE39800AA7E22 /* PlantsUITestsLaunchTests.swift */; };
 		D2228FDA291FEC1F00AA7E22 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2228FD9291FEC1F00AA7E22 /* Plants.swift */; };
+		D2228FDC291FF14C00AA7E22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2228FDB291FF14C00AA7E22 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		D2228FAA291FE39300AA7E22 /* Plants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2228FAD291FE39300AA7E22 /* PlantsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsApp.swift; sourceTree = "<group>"; };
 		D2228FAF291FE39300AA7E22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D2228FB1291FE39800AA7E22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2228FB4291FE39800AA7E22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2228FBA291FE39800AA7E22 /* PlantsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlantsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2228FBE291FE39800AA7E22 /* PlantsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsTests.swift; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		D2228FC8291FE39800AA7E22 /* PlantsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsUITests.swift; sourceTree = "<group>"; };
 		D2228FCA291FE39800AA7E22 /* PlantsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D2228FD9291FEC1F00AA7E22 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
+		D2228FDB291FF14C00AA7E22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../FinancialApp/FinancialApp/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +98,9 @@
 			children = (
 				D2228FD8291FE9E800AA7E22 /* Model */,
 				D2228FD7291FE9DB00AA7E22 /* View */,
-				D2228FB1291FE39800AA7E22 /* Assets.xcassets */,
 				D2228FAD291FE39300AA7E22 /* PlantsApp.swift */,
 				D2228FAF291FE39300AA7E22 /* ContentView.swift */,
+				D2228FDB291FF14C00AA7E22 /* Assets.xcassets */,
 				D2228FB3291FE39800AA7E22 /* Preview Content */,
 			);
 			path = Plants;
@@ -250,8 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2228FDC291FF14C00AA7E22 /* Assets.xcassets in Resources */,
 				D2228FB5291FE39800AA7E22 /* Preview Assets.xcassets in Resources */,
-				D2228FB2291FE39800AA7E22 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

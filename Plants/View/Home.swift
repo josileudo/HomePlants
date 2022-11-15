@@ -19,8 +19,8 @@ struct Home: View {
             let cardSize = size.width;
             
             VStack(spacing: 0) {
-                ForEach(Plants) { Plant in
-                    PlantView(plant: Plant, size: size);
+                ForEach(plants) { plant in
+                    PlantView(plant: plant, size: size);
                 }
             }
             .frame(width: size.width)
@@ -31,9 +31,23 @@ struct Home: View {
         .contentShape(Rectangle())
         .gesture(
             DragGesture()
+            // MARK: Slowing down the gesture
                 .onChanged({ value in
-                    offsetY = value.translation.height
+                    offsetY = value.translation.height * 0.5
                 }).onEnded({value in
+                    let translation = value.translation.height
+                    
+                    if translation > 0 {
+                        // 250 -> Update it for own usage
+                        if currentIndex > 0 && translation > 250 {
+                            currentIndex -= 1;
+                        }
+                    } else {
+                        if currentIndex < CGFloat(plants.count - 1) && -translation > 250 {
+                            currentIndex += 1;
+                        }
+                    }
+                    
                     withAnimation(.easeInOut){
                         offsetY = .zero
                     }

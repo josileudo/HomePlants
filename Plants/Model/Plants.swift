@@ -15,7 +15,7 @@ struct Plant: Identifiable {
     var price: String;
 }
 
-var Plants: [Plant] = [
+var plants: [Plant] = [
     .init(imageName: "asplenium", title: "Asplenium Nidus", price: "$56.70"),
     .init(imageName: "crassula", title: "Crassula Ovata", price: "$38.35"),
     .init(imageName: "nephrolepis", title: "nephrolepis", price: "$106.54"),

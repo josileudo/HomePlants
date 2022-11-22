@@ -28,6 +28,7 @@ struct Home: View {
             .offset(y: offsetY)
             .offset(y: -currentIndex * cardSize)
         }
+        .coordinateSpace(name: "SCROLL")
         .contentShape(Rectangle())
         .gesture(
             DragGesture()
@@ -35,23 +36,22 @@ struct Home: View {
                 .onChanged({ value in
                     offsetY = value.translation.height * 0.5
                 }).onEnded({value in
-                    let translation = value.translation.height
-                    
-                    if translation > 0 {
-                        // 250 -> Update it for own usage
-                        if currentIndex > 0 && translation > 250 {
-                            currentIndex -= 1;
-                        }
-                    } else {
-                        if currentIndex < CGFloat(plants.count - 1) && -translation > 250 {
-                            currentIndex += 1;
-                        }
-                    }
+                    let translation = value.translation.height;
                     
                     withAnimation(.easeInOut){
+                        if translation > 0 {
+                        // 250 -> Update it for own usage
+                            if currentIndex > 0 && translation > 250 {
+                                currentIndex -= 1;
+                            }
+                        } else {
+                            if currentIndex < CGFloat(plants.count - 1) && -translation > 250 {
+                                currentIndex += 1;
+                            }
+                        }
                         offsetY = .zero
                     }
-                })
+            })
         )
     }
 }
@@ -67,13 +67,26 @@ struct PlantView:  View {
     var plant: Plant;
     var size: CGSize;
     var body: some View {
+        let cardSize = size.width;
+        //MARK: Since i want to show three max cards on the display
+        let maxCardSizeDisplay = size.width * 3;
+        
         GeometryReader { proxy in
-            let size = proxy.size;
+            let _size = proxy.size;
+            let offset = proxy.frame(in: .named("SCROLL")).minY - (size.height - cardSize);
+            let scale = offset <= 0 ? (offset / maxCardSizeDisplay) : 0;
+            let reducedScale = 1 + scale;
+            let currentCardScale = offset / cardSize;
             
             Image(plant.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: size.width, height: size.height)
+                .frame(width: _size.width, height: _size.height)
+                .scaleEffect(reducedScale < 0 ? 0.001 : reducedScale, anchor: .init(x: 0.5, y: (1 - currentCardScale / 2.4)))
+                .scaleEffect(offset > 0 ? 1 + currentCardScale : 1, anchor: .top)
+                // MARK: Remove excess new image view
+                .offset(y: offset > 0 ? currentCardScale * 200 : 0)
+                .offset(y: currentCardScale * -130)
         }
         .frame(height: size.width);
     }

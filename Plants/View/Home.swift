@@ -18,6 +18,17 @@ struct Home: View {
             // MARK: Since card size is the size of the screen width;
             let cardSize = size.width;
             
+            //MARK: Linear background bottom
+            LinearGradient(colors: [
+                .clear,
+                Color("Green").opacity(0.2),
+                Color("Green").opacity(0.45),
+                Color("Green")
+            ], startPoint: .top, endPoint: .bottom)
+            .frame(height: 280)
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            .ignoresSafeArea()
+            
             VStack(spacing: 0) {
                 ForEach(plants) { plant in
                     PlantView(plant: plant, size: size);

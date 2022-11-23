@@ -16,7 +16,7 @@ struct Home: View {
             let size = $0.size;
             
             // MARK: Since card size is the size of the screen width;
-            let cardSize = size.width;
+            let cardSize = size.width * 1.1;
             
             //MARK: Linear background bottom
             LinearGradient(colors: [
@@ -28,6 +28,9 @@ struct Home: View {
             .frame(height: 280)
             .frame(maxHeight: .infinity, alignment: .bottom)
             .ignoresSafeArea()
+            
+            //MARK: Header view
+            HeaderView()
             
             VStack(spacing: 0) {
                 ForEach(plants) { plant in
@@ -65,7 +68,61 @@ struct Home: View {
             })
         )
     }
+    
+    @ViewBuilder
+    func HeaderView() -> some View {
+        VStack {
+            HStack {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.title2.bold())
+                        .foregroundColor(.black)
+                }
+                
+                Spacer ()
+                
+                Button {
+                    
+                } label: {
+                    Image(systemName: "cart")
+                        .font(.title2.bold())
+                        .foregroundColor(.black)
+                }
+            }
+            
+            //MARK: Animated informations
+            GeometryReader {
+                let size = $0.size
+                
+                HStack(spacing: 0){
+                    ForEach(plants) { plant in
+                        VStack(spacing: 15) {
+                            Text(plant.title)
+                                .font(.title.bold())
+                                .multilineTextAlignment(.center)
+                            
+                            Text(plant.price)
+                                .font(.title)
+                        }
+                        .frame(width: size.width)
+                    }
+                }
+                .offset(x: currentIndex * -size.width)
+                .animation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.6), value: currentIndex)
+            }
+            .padding(.top, -5)
+            
+        }
+        .padding(15)
+        
+    }
+    
 }
+
+
+
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
@@ -78,7 +135,7 @@ struct PlantView:  View {
     var plant: Plant;
     var size: CGSize;
     var body: some View {
-        let cardSize = size.width;
+        let cardSize = size.width * 0.8;
         //MARK: Since i want to show three max cards on the display
         let maxCardSizeDisplay = size.width * 3;
         
